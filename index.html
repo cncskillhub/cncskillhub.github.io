@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CncSkillHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/img/fv.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/font-4/flaticon.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/smm.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+    
+   
+
+#presentation{
+  width: 480px;
+  height: 120px;
+  padding: 20px;
+  margin: auto;
+  background: #FFF;
+  margin-top: 10px;
+  box-shadow: 0 3px 15px -5px rgba(0,0,0,0.1); 
+  transition: all 0.3s; 
+  border-radius: 10px;
+  
+}
+
+#presentation:hover{
+  box-shadow: 0 12px 28px -5px rgba(0,0,0,0.13);
+  transition: all 0.3s;
+  transform: translateZ(10px);
+}
+
+#floating-button{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #db4437;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+}
+
+.plus{
+  color: white;
+  position: absolute;
+  top: 0;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  line-height: 55px;
+  font-size: 38px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  animation: plus-out 0.3s;
+  transition: all 0.3s;
+}
+
+#container-floating{
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 30px;
+  right: 30px;
+  z-index: 50px;
+}
+
+#container-floating:hover{
+  height: 400px;
+  width: 90px;
+  padding: 30px;
+}
+
+#container-floating:hover .plus{
+  animation: plus-in 0.15s linear;
+  animation-fill-mode: forwards;
+}
+
+.edit{
+  position: absolute;
+  top: 0;
+  display: block;
+  bottom: 0;
+  left: 0;
+  display: block;
+  right: 0;
+  padding: 0;
+  opacity: 0;
+  margin: auto;
+  line-height: 65px;
+  transform: rotateZ(-70deg);
+  transition: all 0.3s;
+  animation: edit-out 0.3s;
+}
+
+#container-floating:hover .edit{
+  animation: edit-in 0.2s;
+   animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes edit-in{
+    from {opacity: 0; transform: rotateZ(-70deg);}
+    to {opacity: 1; transform: rotateZ(0deg);}
+}
+
+@keyframes edit-out{
+    from {opacity: 1; transform: rotateZ(0deg);}
+    to {opacity: 0; transform: rotateZ(-70deg);}
+}
+
+@keyframes plus-in{
+    from {opacity: 1; transform: rotateZ(0deg);}
+    to {opacity: 0; transform: rotateZ(180deg);}
+}
+
+@keyframes plus-out{
+    from {opacity: 0; transform: rotateZ(180deg);}
+    to {opacity: 1; transform: rotateZ(0deg);}
+}
+
+.nds{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 300;
+  transform:  scale(0);
+  cursor: pointer;
+}
+
+.nd1{
+  background: #d3a411;
+  right: 40px;
+  bottom: 120px;
+  animation-delay: 0.2s;
+    animation: bounce-out-nds 0.3s linear;
+  animation-fill-mode:  forwards;
+}
+
+.nd3{
+  background: #3c80f6;
+  right: 40px;
+  bottom: 180px;
+  animation-delay: 0.15s;
+    animation: bounce-out-nds 0.15s linear;
+  animation-fill-mode:  forwards;
+}
+
+.nd4{
+  background: #ba68c8;
+  right: 40px;
+  bottom: 240px;
+  animation-delay: 0.1s;
+    animation: bounce-out-nds 0.1s linear;
+  animation-fill-mode:  forwards;
+}
+
+@keyframes bounce-nds{
+    from {opacity: 0;}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes bounce-out-nds{
+    from {opacity: 1; transform: scale(1);}
+    to {opacity: 0; transform: scale(0);}
+}
+
+#container-floating:hover .nds{
+  
+  animation: bounce-nds 0.1s linear;
+  animation-fill-mode:  forwards;
+}
+
+#container-floating:hover .nd3{
+  animation-delay: 0.08s;
+}
+#container-floating:hover .nd4{
+  animation-delay: 0.15s;
+}
+#container-floating:hover .nd5{
+  animation-delay: 0.2s;
+}
+
+.letter{
+  font-size: 23px;
+  font-family: 'Roboto';
+  color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 40px;
+}
+
+.reminder{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  line-height: 40px;
+}
+
+.profile{
+  border-radius: 50%;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 20px;
+}
+.smm-banner-section .smm-banner-text-content h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.25;
+    position: relative;
+    padding: 0px 0px 0px;
+}
+.smm-feature-section {
+    padding: 5px 0px 70px;
+    background-color: #0a0d18;
+}
+.smm-partner-section .smm-partner-wrapper {
+    z-index: 5;
+    padding: 60px;
+    background-color: #fff;
+    border-top: 2px solid #ffffff;
+    box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 2%);
+}
+.smm-main-header .navbar-nav {
+    display: inline-table;
+}
+.smm-skill-section .smm-skill-img {
+    top: 0;
+    left: 0;
+    width: 55%;
+    position: absolute;
+}
+/* .smm-banner-section .smm-banner-wrapper .smm-banner-img {
+    top: 220px;
+    right: -140px;
+    left: 545px;
+    position: absolute;
+    width: 1271px;
+    animation: zoomIn 1.7s both 0.3s;
+    border-radius: 32px;
+} */
+
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0.75rem;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+}
+.str-home {
+    margin: 0;
+    padding: 0;
+    color: #494949;
+    font-size: 16px;
+    overflow-x: hidden;
+    line-height: 1.625;
+    font-family: "Roboto";
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+.str-footer-area .footer-content {
+    padding-bottom: 80px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.str-home {
+    margin: 0;
+    padding: 0;
+    color: #494949;
+    font-size: 16px;
+    overflow-x: hidden;
+    line-height: 1.625;
+    font-family: "Roboto";
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+.str-footer-area .footer-content .str-ft-about-widget p {
+    line-height: 1.688;
+    padding: 15px 0px 30px;
+}
+
+.pera-content p {
+    margin-bottom: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.str-footer-area .footer-content .str-ft-about-widget .ft-about-btn a {
+    color: #fff;
+    height: 35px;
+    width: 100px;
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 35px;
+    border-radius: 3px;
+    text-align: center;
+    font-family: "Poppins";
+    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%);
+}
+
+.str-footer-area .footer-content .str-ft-about-widget p {
+    line-height: 1.688;
+    padding: 15px 0px 30px;
+}
+
+.str-footer-area .footer-content .str-footer-widget .str-newslatter-widget form {
+    position: relative;
+    margin-top: 25px;
+}
+.str-footer-area .footer-content .str-footer-widget .str-newslatter-widget input {
+    width: 100%;
+    border: none;
+    height: 45px;
+    padding: 0px 30px;
+    background-color: #eeeeee;
+}
+button, input {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.str-footer-area .footer-content .str-footer-widget .str-newslatter-widget button {
+    top: 0;
+    right: 0;
+    width: 60px;
+    color: #fff;
+    height: 100%;
+    border: none;
+    position: absolute;
+    background-color: #010101;
+    transition: 0.3s all ease-in-out;
+}
+.str-footer-area .footer-content .str-footer-widget .str-newslatter-widget .str-social-footer {
+    margin-top: 20px;
+}
+.str-footer-area .footer-content .str-footer-widget .str-newslatter-widget .str-social-footer a:nth-child(1) {
+    color: #16599b;
+}
+.str-footer-area .footer-content .str-footer-widget .str-newslatter-widget .str-social-footer a {
+    margin-right: 18px;
+}
+.str-footer-area .footer-content .str-footer-widget .str-office-widget {
+    padding-left: 10px;
+}
+.str-footer-area .footer-content .str-footer-widget .str-widget-title {
+    color: #080808;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 25px;
+}
+.str-footer-area .footer-content .str-footer-widget .str-office-widget .str-office-icon-text {
+    padding-bottom: 10px;
+}
+.str-footer-area .footer-content .str-footer-widget .str-office-widget .str-office-icon-text .str-office-icon {
+    margin-right: 12px;
+}
+
+.float-left {
+    float: left!important;
+}
+.str-footer-area .footer-content .str-footer-widget .str-office-widget .str-office-icon-text .str-office-icon i {
+    text-shadow: -1.045px 9.945px 16px rgb(68 46 200 / 40%);
+    background-image: linear-gradient(125deg, #6407c1 0%, #324add 49%, #008df9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.str-footer-area .footer-content .str-footer-widget .str-office-widget .str-office-icon-text p {
+    max-width: 140px;
+    font-size: 14px;
+    overflow: hidden;
+    line-height: 1.714;
+}
+.pera-content p {
+    margin-bottom: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.str-footer-area .str-copywright-text {
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    font-size: 14px;
+    font-family: "Poppins";
+    background-color: #0f2330;
+}
+a:hover, a:focus{
+    outline: none;
+    text-decoration: none;
+}
+#accordion .panel{
+    box-shadow: none;
+    border: none;
+    border-radius:0;
+    margin-bottom: 6px;
+    border-left:5px solid #0f3a99;
+}
+#accordion .panel-heading{
+    padding:0;
+    background-color:#fff;
+}
+#accordion .panel-title a{
+    display: block;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px 40px;
+    background: #f5f5f5;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d3d3d3;
+    position: relative;
+}
+#accordion .panel-title a.collapsed{
+    border-top: 0;
+    color: #333;
+    background: #eee;
+    border-bottom:1px solid transparent;
+}
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "\f068";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #0f3a99;
+}
+#accordion .panel-title a.collapsed:before{
+    content: "\f067";
+}
+#accordion .panel-body{
+    color: #000000;
+    font-size: 14px;
+    line-height: 20px;
+    border-top: 0 none;
+    background: #eee;
+    padding: 15px 27px;
+}
+.smm-skill-section {
+    padding: 0px 0px 80px;
+    background-color: #102fa5;
+    padding-bottom: 0px;
+}
+.text-gradient__indigo-red {
+    padding-right: 0.05em;
+    background-image: linear-gradient(207deg,#ef4848 23%,#6366f1 87%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.str-get-in-touch-section {
+    padding-bottom: 110px
+}
+
+section {
+    overflow: hidden;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.str-get-in-touch-section .str-get-touch-icon-text {
+    z-index: 1;
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #e9eaf6;
+}
+.str-get-in-touch-section .str-get-touch-icon-text .str-get-touch-icon {
+    height: 72px;
+    width: 70px;
+    line-height: 70px;
+    margin-right: 14px;
+    background-color: #fff;
+}
+
+.text-center {
+    text-align: center!important;
+}
+.float-left {
+    float: left!important;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.str-get-in-touch-section .str-get-touch-icon-text .str-get-touch-text {
+    padding-top: 10px;
+}
+.str-get-in-touch-section .str-get-touch-icon-text .str-get-touch-text h3 {
+    color: #010101;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 1px;
+    transition: 0.3s all ease-in-out;
+}
+.str-get-in-touch-section .str-get-touch-icon-text .str-get-touch-text span {
+    color: #444444;
+    font-size: 15px;
+    transition: 0.3s all ease-in-out;
+}
+.str-get-in-touch-section .str-get-touch-icon-text:after {
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 0%;
+    z-index: -1;
+    content: "";
+    height: 100%;
+    position: absolute;
+    transition: 0.5s all ease-in-out;
+    background-image: linear-gradient(90deg, #1422b5 1%, #0c57da 49%, #048cff 100%);
+}
+</style>
+<body class="smm-home" data-spy="scroll" data-target=".smm-main-navigation" data-offset="80">
+    <!-- preloader - start -->
+    <div id="smm-preloader"></div>
+
+<!-- Start of header section
+    ============================================= -->
+    <header id="smm-header" class="smm-main-header header-type-three">
+        <div class="container">
+            <div class="smm-main-header-content position-relative clearfix">
+                <div class="smm-logo float-left">
+                    <a class="smm-logo-1" href="#"><img src="assets/image/logo.png" width="150px"></a>
+                </div>
+                <div class="smm-main-menu-item">
+                    <nav class="smm-main-navigation float-left clearfix ul-li">
+                        <ul id="main-nav" class="navbar-nav text-capitalize clearfix">
+                            <li><a href="#smm-banner">Home</a></li>
+                            <li><a href="#smm-feature">About </a></li>
+                            <li><a href="#Facilites">Facilites</a></li>
+                            <li><a href="#smm-case-study">Gallery</a> </li>
+                            <li><a href="#Contents">Course Contents</a> </li>
+                            <li><a href="#smm-testimonial">Testimonials</a> </li>
+                            <li><a href="#">Contact</a> </li>
+                            <li><a href="#smm-partner">Other Courses</a> </li>
+                        </ul>
+                    </nav>
+                   
+                </div>
+              
+               
+        </div>
+        <!-- /desktop menu -->
+        <div class="smm-mobile_menu position-relative">
+            <div class="smm-mobile_menu_button smm-open_mobile_menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="smm-mobile_menu_wrap">
+                <div class="mobile_menu_overlay smm-open_mobile_menu"></div>
+                <div class="smm-mobile_menu_content">
+                    <div class="smm-mobile_menu_close smm-open_mobile_menu">
+                        <i class="flaticon-letter-x"></i>
+                    </div>
+                    <div class="m-brand-logo text-center">
+                        <a href="!#"><img src="assets/image/logo.png" alt=""></a>
+                    </div>
+                    <nav class="smm-mobile-main-navigation  clearfix ul-li">
+                     <ul id="m-main-nav" class="navbar-nav text-capitalize clearfix">
+                        <li><a href="#smm-banner">Home</a></li>
+                        <li><a href="#smm-feature">About </a></li>
+                        <li><a href="#Facilites">Facilites</a></li>
+                        <li><a href="#smm-case-study">Gallery</a> </li>
+                        <li><a href="#Contents">Course Contents</a> </li>
+                        <li><a href="#smm-testimonial">Testimonials</a> </li>
+                        <li><a href="#">Contact</a> </li>
+                        <li><a href="#smm-partner">Other Courses</a> </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /Mobile-Menu -->
+    </div>
+</div>
+</header> 
+<!-- End of header section
+    ============================================= -->
+
+<!-- Start of banner section
+    ============================================= -->    
+    <section id="smm-banner" class="smm-banner-section">
+        <div class="container">
+            <div class="smm-banner-wrapper position-relative">
+                <div class="smm-banner-text-content smm-headline pera-content">
+                    <h1>HANDS-ON<br> TRAINING IN<br></h1><b><h1 class="text-gradient__indigo-red">CNC MACHINING.</span></b></h1><br>
+                    <h6>An unique way for better carrier opportunity !</h6><br>
+
+                    <a href="#">Join With Us</a>
+                </div>
+                <div class="smm-banner-img">
+                    <img src="assets/image/cnc.jpg" style="border-radius: 12px;" width="714" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of banner section
+    ============================================= -->
+
+      
+      <div id="container-floating">
+        <div class="nd4 nds"><img class="reminder">
+          <p class="letter">C</p>
+        </div>
+        
+        <div class="nd3 nds"><img class="reminder" src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_reminders_speeddial_white_24dp.png" /></div>
+        
+        <div class="nd1 nds">
+          <p class="letter">E</p>
+        </div>
+      
+        <div id="floating-button">
+          <p class="plus">+</p>
+          <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+        </div>
+      </div>
+      
+
+   
+<!-- Start of Feature section
+    ============================================= -->    
+    <section id="smm-feature" class="smm-feature-section">
+        <div class="container">
+            <div class="smm-section-title smm-headline"><br><br>
+                <span>About Us</span>
+                <h2 style="color: white;">Let's See What’s Inside
+                </h2>
+            </div>
+            <div class="smm-feature-wrapper">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="0ms" data-wow-duration="1500ms"  >
+                        <div class="smm-feature-innerbox" style="background-color: black;">
+                            <div class="smm-feature-icon float-left">
+                                <img src="assets/img/smm/icon/sm-f3.png" alt="">
+
+                            </div>
+                            <h3><a href="#" style="color: white;">One To One Training</a></h3>
+                            <div class="smm-feature-text smm-headline pera-content">
+                                <p style="color: white;"> 
+                                    We provide One - One training program as per the understanding level, as well as time frame availability of the candidate.
+                                </p><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6  wow fadeFromUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="smm-feature-innerbox" style="background-color: black;">
+                            <div class="smm-feature-icon float-left">
+                                <img src="assets/img/smm/icon/sm-f2.png" alt="">
+                            </div>
+                            <h3><a href="#" style="color: white;">Direct Machine Practical</a></h3>
+                            <div class="smm-feature-text smm-headline pera-content">
+                                <p style="color: white;">
+                                    Pracital classes on Industrial VMC and CNC lathe Machines, Also individual project for every candidate to built more confidence on Interviews.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6  wow fadeFromUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="smm-feature-innerbox" style="background-color: black;">
+                            <div class="smm-feature-icon float-left">
+                                <img src="assets/img/smm/icon/sm-f1.png" alt="">
+                            </div>
+                            <h3><a href="#" style="color: white;">Placement Support</a></h3>
+                            <div class="smm-feature-text smm-headline pera-content">
+                                <p style="color: white;">
+                                    Our placement team & our own CNC jobportal a <a href="https://machiningconcepts.com/careers/?utm_source=mycncjobs"><font color="red">"mycncjobs.com"</font></a> will support candidates for better placement opportunity in industry.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Feature section
+    ============================================= -->
+
+
+<!-- Start of About section
+    ============================================= -->
+    <!-- <section id="smm-about" class="smm-about-section">
+        <div class="container">
+            <div class="smm-about-wrapper position-relative">
+                <div class="smm-about-img wow fadeFromLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <img src="assets/img/smm/about/sm-ab1.png" alt="">
+                </div>
+                <div class="smm-about-text-wrap wow fadeFromRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="smm-section-title smm-headline">
+                        <span>About Us</span>
+                        <h2>Get Tips & Tricks On How To
+                        Skyrocket Your Sales.</h2>
+                    </div>
+                    <div class="smm-title-subtext">
+                        A better way to manage your sales, team, clients & marketing
+                        - on a single platform. <a href="#">Powerful, affordable & easy</a>
+                    </div>
+                    <div class="smm-about-service-list ul-li-block">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Social media is an ingredient not an entree</li>
+                            <li><i class="fas fa-check"></i> Generating leads with social media marketing</li>
+                            <li><i class="fas fa-check"></i> Be genuine. Be nice. Know your audience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+<!-- End of About section
+    ============================================= -->             
+
+
+
+    <section class="pt-5 pb-5" id="Facilites">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="mb-3">Our Facilites.</h3>
+                </div>
+                <div class="col-6 text-right">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+    
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card shadow p-3 mb-5 bg-white ">
+                                            <img class="img-fluid" alt="100%x280" src="assets/image/m1.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Ace</h4>
+                                                <p class="card-text" style="color: black;">A CNC turning center for<br> practical Classes.</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card shadow p-3 mb-5 bg-white">
+                                            <img class="img-fluid" alt="100%x280" src="assets/image/m2.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title" >doNC Lathe</h4>
+                                                <p class="card-text" style="color: black;">A virtual CNC Simulator for<br> practicing.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card shadow p-3 mb-5 bg-white">
+                                            <img class="img-fluid" alt="100%x280" src="assets/image/m3.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">doNC Mill</h4>
+                                                <p class="card-text" style="color: black;">A virtual CNC Simulator for <br>practicing.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card shadow p-3 mb-5 bg-white">
+                                            <img class="img-fluid" alt="100%x280" src="assets/image/m4.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">CAPSmill</h4>
+                                                <p class="card-text" style="color: black;">CAD/CAM for Programming & Cycletime calculation.</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card shadow p-3 mb-5 bg-white">
+                                            <img class="img-fluid" alt="100%x280" src="assets/image/m5.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">CAPSturn</h4>
+                                                <p class="card-text" style="color: black;">CAD/CAM for Programming & Cycletime calculation.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card shadow p-3 mb-5 bg-white">
+                                            <img class="img-fluid" alt="100%x280" src="assets/image/m6.jpg">
+                                            <div class="card-body">
+                                                <h4 class="card-title">TAL</h4>
+                                                <p class="card-text" style="color: black;">A vertical machining center for practical Classes.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Start of Case study section
+    ============================================= -->    
+    <section id="smm-case-study" class="smm-case-study-section">
+        <div class="container">
+            <div class="smm-section-title text-center smm-headline">
+                <span>Gallery</span>
+                <h2>Our Gallery.</h2>
+            </div>
+            <div class="smm-case-study-wrapper">
+                <!-- <div class="smm-case-tab text-center clearfix ul-li">
+                    <ul id="tabs" class="nav text-uppercase nav-tabs">
+                        <li class="nav-item"><a href="#" data-target="#development" data-toggle="tab" class="nav-link text-capitalize active">Web Development</a></li>
+                        <li class="nav-item"><a href="#" data-target="#design" data-toggle="tab" class="nav-link text-capitalize">Graphic Design  </a></li>
+                        <li class="nav-item"><a href="#" data-target="#social" data-toggle="tab" class="nav-link text-capitalize">Web Design </a></li>
+                        <li class="nav-item"><a href="#" data-target="#web" data-toggle="tab" class="nav-link text-capitalize">Social Marketing </a></li>
+                        <li class="nav-item"><a href="#" data-target="#digital" data-toggle="tab" class="nav-link text-capitalize">Digital Marketing </a></li>
+                    </ul>
+                </div> -->
+                <!-- /tab_button -->
+                <div class="smm-case-tab-content">
+                    <div id="tabsContent" class="tab-content">
+                        <div id="development" class="tab-pane fade active show">
+                            <div class="smm-case-content">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="smm-case-innerbox position-relative">
+                                            <div class="smm-case-img">
+                                                <img src="assets/image/g1.jpg" alt="">
+                                            </div>
+                                            <div class="smm-case-text smm-headline pera-content">
+                                                <h3><a href="#">Practical Classes In CNC Lathe
+                                                </a></h3>
+                                                
+                                            </div>
+                                            <div class="smm-case-popup">
+                                                <a class="smm-video-box" href="assets/image/g1.jpg"><i class="flaticon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="smm-case-innerbox position-relative">
+                                            <div class="smm-case-img">
+                                                <img src="assets/image/g2.jpg" alt="">
+                                            </div>
+                                            <div class="smm-case-text smm-headline pera-content">
+                                                <h3><a href="#">Practical Classes In CNC Lathe
+                                                </a></h3>
+                                                
+                                            </div>
+                                            <div class="smm-case-popup">
+                                                <a class="smm-video-box" href="assets/image/g2.jpg"><i class="flaticon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mt-0">
+                                        <div class="smm-case-innerbox position-relative">
+                                            <div class="smm-case-img">
+                                                <img src="assets/image/g3.jpg" alt="">
+                                            </div>
+                                            <div class="smm-case-text smm-headline pera-content">
+                                                <h3><a href="#">Practical Classes In CNC Lathe
+                                                </a></h3>
+                                               
+                                            </div>
+                                            <div class="smm-case-popup">
+                                                <a class="smm-video-box" href="assets/image/g3.jpg"><i class="flaticon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mt-3">
+                                        <div class="smm-case-innerbox position-relative">
+                                            <div class="smm-case-img">
+                                                <img src="assets/image/g4.jpg" alt="">
+                                            </div>
+                                            <div class="smm-case-text smm-headline pera-content">
+                                                <h3><a href="#">Practical Classes In VMC
+
+                                                </a></h3>
+                                               
+                                            </div>
+                                            <div class="smm-case-popup">
+                                                <a class="smm-video-box" href="assets/image/g4.jpg"><i class="flaticon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mt-3">
+                                        <div class="smm-case-innerbox position-relative">
+                                            <div class="smm-case-img">
+                                                <img src="assets/image/g5.jpg" alt="">
+                                            </div>
+                                            <div class="smm-case-text smm-headline pera-content">
+                                                <h3><a href="#">Practical Classes In VMC
+
+                                                </a></h3>
+                                               
+                                            </div>
+                                            <div class="smm-case-popup">
+                                                <a class="smm-video-box" href="assets/image/g5.jpg"><i class="flaticon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mt-3">
+                                        <div class="smm-case-innerbox position-relative">
+                                            <div class="smm-case-img">
+                                                <img src="assets/image/g6.jpg" alt="">
+                                            </div>
+                                            <div class="smm-case-text smm-headline pera-content">
+                                                <h3><a href="#">Practical Classes In VMC
+
+                                                </a></h3>
+                                               
+                                            </div>
+                                            <div class="smm-case-popup">
+                                                <a class="smm-video-box" href="assets/image/g6.jpg"><i class="flaticon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Case study section
+    ============================================= -->
+
+
+
+    
+
+    <div class="container" id="Contents">
+        <div class="smm-section-title text-left smm-headline">
+            <span>Courses</span>
+            <h2>Courses Contents.</h2><br>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Level 1 - CNC Operator
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body col-md-12">
+                                <div class="container">
+                                
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    History of CNC machines</a><br>
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    Advantages & Disadvantages of CNC</a><br>
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    Types of CNC Machines</a><br>
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    Major CNC machine Manufacturers</a><br>
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    Mechanical basics</a><br>
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    Electrical basics
+                                </a><br>
+                                    <a href="#" style='    color: #fff;
+                                    height: 35px;
+                                    width: 390px;
+                                    display: block;
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                    line-height: 35px;
+                                    border-radius: 3px;
+                                    text-align: center;
+                                    font-family: "Poppins";
+                                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                    Axis Direction
+                                </a><br>
+                                <a href="#" style='    color: #fff;
+                                height: 35px;
+                                width: 390px;
+                                display: block;
+                                font-size: 15px;
+                                font-weight: 700;
+                                line-height: 35px;
+                                border-radius: 3px;
+                                text-align: center;
+                                font-family: "Poppins";
+                                box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                                Types Spindle taper
+
+                            </a><br>
+                            <a href="#" style='    color: #fff;
+                            height: 35px;
+                            width: 390px;
+                            display: block;
+                            font-size: 15px;
+                            font-weight: 700;
+                            line-height: 35px;
+                            border-radius: 3px;
+                            text-align: center;
+                            font-family: "Poppins";
+                            box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                            background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Types of holders
+</a><br>
+                        <a href="#" style='    color: #fff;
+                        height: 35px;
+                        width: 390px;
+                        display: block;
+                        font-size: 15px;
+                        font-weight: 700;
+                        line-height: 35px;
+                        border-radius: 3px;
+                        text-align: center;
+                        font-family: "Poppins";
+                        box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                        background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Tool material selection & Characteristics
+</a><br>
+                    <a href="#" style='    color: #fff;
+                    height: 35px;
+                    width: 390px;
+                    display: block;
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 35px;
+                    border-radius: 3px;
+                    text-align: center;
+                    font-family: "Poppins";
+                    box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                    background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Types of tools
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Types of operations
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Types of clamps & fixtures
+</a><br>
+<a href="#" style='    color: #fff;
+height: 70px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Machine Control Panel Operating<br> (JOG Mode, MDI, Edit, Auto, Single block, etc.)
+</a><br>
+<a href="#" style='    color: #fff;
+height: 70px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Work offset & tool offset on machines &<br> software (Geometry offset, Wear offset.)
+</a><br>
+                                
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Level 2 - CNC Supervisor
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <a href="#" style='    color: #fff;
+                                height: 75px;
+                                width: 390px;
+                                display: block;
+                                font-size: 15px;
+                                font-weight: 700;
+                                line-height: 35px;
+                                border-radius: 3px;
+                                text-align: center;
+                                font-family: "Poppins";
+                                box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Engineering drawing reading & understanding</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Process planning</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Typical G codes & M codes</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Absolute Coordinate & Incremental Coordinate</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Feed, Speed & Tool change Commands</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Basic Motion Commands with Examples</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Program Structure</a><br>
+<a href="#" style='    color: #fff;
+height: 75px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Cutting tools and Cutting parameters<br> calculation.</a><br>
+<a href="#" style='    color: #fff;
+height: 75px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Professional Programming with<br> process planning sheet
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Machining Operations from Bar stock
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Sample Casting Models for Programming</a><br>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Level 2 - CNC Engineer
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <a href="#" style='    color: #fff;
+                                height: 35px;
+                                width: 390px;
+                                display: block;
+                                font-size: 15px;
+                                font-weight: 700;
+                                line-height: 35px;
+                                border-radius: 3px;
+                                text-align: center;
+                                font-family: "Poppins";
+                                box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+                                background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+                               Advantages of CAM software
+                            </a><br>
+                                <a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Applying of tool paths
+</a><br>
+<a href="#" style='    color: #fff;
+height: 75px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Check simulation for collisions & Proper tool movements.
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Generating shop documentation & setup sheets
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Generating NC codes
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Cycle time calculation
+</a><br>
+<a href="#" style='    color: #fff;
+height: 35px;
+width: 390px;
+display: block;
+font-size: 15px;
+font-weight: 700;
+line-height: 35px;
+border-radius: 3px;
+text-align: center;
+font-family: "Poppins";
+box-shadow: -1.045px 9.945px 16px 0px rgb(68 46 200 / 40%);
+background-image: linear-gradient(-30deg, #008df9 0%, #6006b3 100%) '>
+Programming transfer using RS232 & Flash card.
+</a><br>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+    
+
+<!-- Start of Testimonial section
+    ============================================= --> 
+    <section id="smm-testimonial" class="smm-testimonial-section" style="background-color: black;" >
+        <div class="container">
+            <div class="smm-section-title text-center smm-headline">
+                <h4 style="color: white;"><b>What Our Old Students Say</b></h4><br><br><br>
+            </div>
+            <div id="smm-testimonial-id" class="smm-testimonial-wrapper owl-carousel">
+                <div class="smm-testimonial-wrap">
+                    <div class="smm-testimonial-img">
+                        <img src="assets/image/sakthivel.png" alt="">
+                    </div>
+                    <div class="smm-testimonial-text text-center smm-headline pera-content">
+                        <p>The faculty was very interactive & had relevant knowledge about the course.
+                            The hands on session in machines helped me a lot to gain more practical knowledge & make me more confident in handling of CNC machines.Now I have confidence to face interviews & now I am very much effective in myself.</p>
+                        <div class="smm-testi-author">
+                            <h3>Sakthivel</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="smm-testimonial-wrap">
+                    <div class="smm-testimonial-img">
+                        <img src="assets/image/ranjith.png" alt="">
+                    </div>
+                    <div class="smm-testimonial-text text-center smm-headline pera-content">
+                        <p>I joined Hands on training in CNC Machining. Training is very perfect and more time for Practicing they allowed me practice till I am satisfied.
+                            so my thanks from my heart to Millwright Make my Future bright.</p>
+                        <div class="smm-testi-author">
+                            <h3>Ranjith Kumar </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="smm-testimonial-wrap">
+                    <div class="smm-testimonial-img">
+                        <img src="assets/image/mukilan.png" alt="">
+                    </div>
+                    <div class="smm-testimonial-text text-center smm-headline pera-content">
+                        <p>Hear I am well-trained For The course of Hands on Training in CNC Machining and my confidence level improved. 
+                            Teaching accoding to our mentality is very excellent and the software and systems also improved my knowledge. Their Hospitlity and Frendly sharing many things. Thanks to Millwright Team.</p>
+                        <div class="smm-testi-author">
+                            <h3>Mukilan</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="smm-testimonial-wrap">
+                    <div class="smm-testimonial-img">
+                        <img src="assets/image/Shankar.png" alt="">
+                    </div>
+                    <div class="smm-testimonial-text text-center smm-headline pera-content">
+                        <p>As I am working professional it was hard to give constant time for training but thanks to the institute for their one to one training facility.Based on my timing they scheduled the classes & helped me to finish the classes without compromising with my working hours.</p>
+                        <div class="smm-testi-author">
+                            <h3>Shankar Ganesh</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="smm-testimonial-wrap">
+                    <div class="smm-testimonial-img">
+                        <img src="assets/image/harshal.png" alt="">
+                    </div>
+                    <div class="smm-testimonial-text text-center smm-headline pera-content">
+                        <p>At the end of the training we had an opportunity to work on a working CNC machine.
+                            During this training we saw various tools and its types, various operations which are carried out on a regular basis.This training has proved very beneficial for me. I am studying in UK and I have an upper hand over others.</p>
+                        <div class="smm-testi-author">
+                            <h3>Harshal Sukenkar </h3>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+<!-- End of Testimonial section
+    ============================================= -->     
+
+
+
+    <!-- Start of Counter section
+    ============================================= --><br><br>
+    <section id="smm-counter" class="smm-counter-section position-relative">
+        <div class="container">
+            <div class="smm-counter-wrapper shadow p-3 mb-5">
+             <div class="row ">
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="smm-counter-text-icon position-relative text-center pera-content">
+                        <span class="odometer" data-count="1500">00</span><strong></strong>
+                        <p>+ Satisfied Candidates
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="smm-counter-text-icon position-relative text-center pera-content">
+                        <span class="odometer" data-count="12">00</span><strong></strong>
+                        <p>+ Trainers
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="smm-counter-text-icon position-relative text-center pera-content">
+                        <span class="odometer" data-count="15">00</span><strong></strong>
+                        <p>+ Years of Experience
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="smm-counter-text-icon position-relative text-center pera-content">
+                        <span class="odometer" data-count="20">00</span><strong></strong>
+                        <p>+ Softwares and Equipments
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Counter section
+    ============================================= -->
+
+
+    
+    
+<!-- Start of partner section
+    ============================================= -->
+    <section id="smm-partner" class="smm-partner-section position-relative">
+        <div class="container">
+            <div class="smm-section-title smm-headline">
+                <h4><b>Other Courses.</b></h4>
+            </div>
+            <div class="smm-partner-wrapper">
+                <div id="smm-partner-id" class="smm-partner-slider owl-carousel">
+                   <div class="smm-partner-img">
+                    <a href="#"><img src="assets/image/1.jpg" alt=""></a>
+                </div>
+                <div class="smm-partner-img">
+                    <a href="#"><img src="assets/image/2.jpg" alt=""></a>
+                </div>
+                <div class="smm-partner-img">
+                    <a href="#"><img src="assets/image/3.jpg" alt=""></a>
+                </div>
+                <div class="smm-partner-img">
+                    <a href="#"><img src="assets/image/4.jpg" alt=""></a>
+                </div>
+                <div class="smm-partner-img">
+                    <a href="#"><img src="assets/image/5.jpg" alt=""></a>
+                </div>
+                <div class="smm-partner-img">
+                    <a href="#"><img src="assets/image/6.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><br><br><br><br><br><br><br>
+<!-- End of partner section
+    ============================================= --> 
+
+
+
+
+<!-- Start of Skill section
+    ============================================= -->          
+    <section id="smm-skill" class="smm-skill-section">
+        <div class="smm-skill-section-wrapper  position-relative">
+            <div class="smm-skill-img">
+                <img src="assets/image/yt.jpg" alt="">
+                <div class="smm-skill-play position-absolute">
+                    <a class="smm-video-box" href="https://www.youtube.com/embed/-pwBcX2YbWs"><i class="flaticon-play-button"></i></a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="smm-skill-wrapper"><br><br><br><br>
+                    <div class="smm-section-title  smm-headline">
+                        <span>Our Students</span>
+                        <h2>Words From Student.</h2>
+                        <h6 style="color: white;">Hands-On training in CNC Machining in Millwright- Millwright Chennai, Coimbatore and Hosur
+                            .</h6>
+
+                    </div>
+                
+                    <!-- <div class="skill-progress-bar">
+                        <div class="skill-set-percent headline">
+                            <h4>Design Solutions</h4>
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-set-percent headline">
+                            <h4>Web Development</h4>
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-set-percent headline">
+                            <h4>UI/UX Design</h4>
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="60"></div>
+                            </div>
+                        </div>
+                        <div class="skill-set-percent headline">
+                            <h4>Social Network Process</h4>
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="85"></div>
+                            </div>
+                        </div>
+                    </div> --><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of Skill section
+    ============================================= -->
+
+
+
+<br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-sm-12">
+                <div class="about-content-area">
+                    <div class="title-section">
+                        <h2 style="color: black;">Learn <span class="color-red">CNC Programming</span> <span class="color">In Chennai @ MillWright</span></h2>
+                    </div><hr class="float-left" style="color: blue;" width="35%"  ><br><br>
+                    <div class="content-section">
+                        <p align="justify">CNC stands for the Computer Numerical Control. It involves an ability to work with high level of accuracy. If you want a solid practical skill, then the <strong style="color: black;">CNC Programming Course In Chennai</strong> @ Millwright is the one stop destination for you to learn this numerical control courses with potential skill. </p>
+
+<p align="justify">Millwright is one of the best in huge range of <strong style="color: black;">CNC Training Centre In Chennai</strong> which delivers the best kind of CNC courses and practical programming training for any individuals who are all willing to learn this competitive workforce courses. </p>
+
+<p align="justify">Millwright, CNC training centre helps you to learn all latest machinery and manufacturing technology in order to provide an opportunity to succeed in the field of what we work. We are offering the various levels of CNC training. </p>
+
+<ul>
+<li style="color: black;">
+Level 1- CNC Operator
+</li>
+<li style="color: black;">
+Level 2- CNC Supervisor
+</li>
+<li style="color: black;">
+Level 3- CNC Engineer
+</li>
+</ul><br>
+
+<p align="justify">Through the level of courses, we provide one to one CNC training program and direct practical classes for VMC and CNC industrial lathe machines with better placement opportunities in the industry. </p>
+
+<p align="justify">You should always remember once before choosing the CNC courses that the best CNC training program will always provide information about the milling tools as well as the many other kind of industrial tool. </p>
+
+<p align="justify">Millwright trainers are familiar with the industrial machining and many other trade tools. </p>
+
+<p align="justify">If you are willing to enroll your career in CNC machining operation, then Millwright <strong style="color: black;">CNC Training in Chennai</strong> is the right choice for you. At the edge, you are highly trained before you enter into a position and familiar with the work already by learning our best <strong style="color: black;">CNC Course in Chennai</strong>.  </p>
+<h3 style="color: black;">CNC Training Is Best Way to Improve Your Carrier Growth</h3>
+
+<p align="justify">CNC machining technology is most advanced device for day-to-day industries. &nbsp;The advent of this technology, whose numerical control was computerized, the manufacturing procedures of different industries received an unexpected boost. This system is not only capable to increase the production but also able to provide high quality accuracy in very small amount of time.</p>
+
+<p>Millwright is the best <strong style="color: black;"><a href="https://cnc-training.in/cnc-training-centre-coimbatore.html">Cnc Training Centre in Coimbatore</a> </strong>which provides the best practical programming training for CNC courses.</p>
+
+<p>Millwright provides a best <strong style="color: black;"><a href="https://cnc-training.in/cnc-training-centre-coimbatore.html">Cnc Course in Coimbatore</a></strong> and Chennai.</p>
+
+<p>&nbsp;Millwright guides are well knowledge with the CNC tools and industrial machining.</p>
+
+<p>If you are eager to join your career in Cnc Programming Course then Millwright <strong style="color: black;"><a href="https://cnc-training.in/cnc-training-centre-coimbatore.html">Cnc Programming Course in Coimbatore</a></strong> is the best choice for you. &nbsp;</p>
+
+<p>We helps you to learn all latest manufacturing technology &nbsp;and machinery tools&nbsp; &nbsp;in order to provide an chance to succeed in the field, At the end, you are highly trained before you enter into a job</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div><br>
+
+
+
+    <section id="str-get-in-touch" class="str-get-in-touch-section">
+        <div class="container">
+            <div class="str-get-in-touch-content">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="str-get-touch-icon-text">
+                            <div class="str-get-touch-icon text-center float-left">
+                                <img src="assets/img/startup/icon/gt1.png" alt="">
+                            </div>
+                            <div class="str-get-touch-text str-headline"><br>
+                                <h3>Chennai Location</h3><br>
+                                <span>#104/815A, MTH Road, Padi, Chennai-600050. (Opp. to Britannia 2nd Gate)<br>
+                                    #1, Nethaji Street, Poonamalle Road, Ekkatuthangal, Chennai-600032. (Post office building). </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="str-get-touch-icon-text">
+                            <div class="str-get-touch-icon text-center float-left">
+                                <img src="assets/img/startup/icon/gt1.png" alt="">
+                            </div>
+                            <div class="str-get-touch-text str-headline"><br>
+                                <h3>Coimbatore Location</h3><br>
+                                <span>#165, 5th Street, Cross Cut road, Gandhipuram, Coimbatore-641012. (Next to LA LA Hotel)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="str-get-touch-icon-text">
+                            <div class="str-get-touch-icon text-center float-left">
+                                <img src="assets/img/startup/icon/gt3.png" alt="">
+                            </div>
+                            <div class="str-get-touch-text str-headline">
+                                <h3>Call Us</h3>
+                                <span>Mobile <br><br>+919094555565 <br> +91 44 45011057 </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    
+</section>
+
+
+
+
+<!-- Start of footer section
+    ============================================= -->              
+    <footer id="str-footer" style="background-color: black;" class="str-footer-area">
+        <div class="container">
+            <div class="footer-content"><br><br>
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <div class="str-footer-widget str-headline pera-content">
+                            <div class="str-ft-about-widget">
+                                <a href="#"><img src="assets/image/logo.png" alt=""></a>
+                                <p style="color: white;">We work with a passion of taking challenges and creating new ones in advertising sector.</p>
+                                <div class="ft-about-btn">
+                                    <a href="#">About us</a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="str-footer-widget str-headline pera-content">
+                            <div class="str-newslatter-widget">
+                                <h3 class="str-widget-title"style="color: white;">Newsletter</h3>
+                                <p style="color: white;">Subscribe our newsletter to get our
+                                    latest update &amp; news
+                                </p>
+                                <form action="#">
+                                    <input class="email" name="email" type="email" placeholder="Your email address">
+                                    <button class="hover-btn" type="submit" value="Submit"> <i class="fas fa-paper-plane"></i></button> 
+                                </form>
+                                <div class="str-social-footer">
+                                    <a href="#"><i class="fab fa-facebook-f "style="color: white;"></i></a>
+                                    <a href="#"><i class="fab fa-twitter" style="color: white;"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble" style="color: white;"></i></a>
+                                    <a href="#"><i class="fab fa-behance" style="color: white;"></i></a>
+                                </div>
+                            </div>
+                        </div><br>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="str-footer-widget str-headline pera-content">
+                            <div class="str-office-widget">
+                                <h3 class="str-widget-title" style="color: white;">Official info:</h3>
+                                <div class="str-office-icon-text">
+                                    <div class="str-office-icon float-left">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <p style="color: white;">30 Commercial Road
+                                        Fratton, Australia
+                                    </p>
+                                </div>
+                                <div class="str-office-icon-text">
+                                    <div class="str-office-icon float-left">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <p style="color: white;">1-888-452-1505</p>
+                                </div>
+                                <!-- <div class="str-open-hour">
+                                    <span style="color: white;">Open Hours: </span>
+                                    <p>Mon - Sat: 8 am - 5 pm,
+                                        Sunday: CLOSED
+                                    </p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-lg-3">
+                        <div class="str-footer-widget str-headline pera-content">
+                            <div class="str-insta-widget">
+                                <h3 class="str-widget-title" style="color: white;">Instagram</h3>
+                                <div class="str-insta-feed">
+                                    <a href="!#"><img src="assets/img/startup/instagram/ins1.jpg" alt=""></a>
+                                    <a href="!#"><img src="assets/img/startup/instagram/ins2.jpg" alt=""></a>
+                                    <a href="!#"><img src="assets/img/startup/instagram/ins3.jpg" alt=""></a>
+                                    <a href="!#"><img src="assets/img/startup/instagram/ins4.jpg" alt=""></a>
+                                    <a href="!#"><img src="assets/img/startup/instagram/ins5.jpg" alt=""></a>
+                                    <a href="!#"><img src="assets/img/startup/instagram/ins6.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="str-copywright-text text-center">
+            2022 © All rights reserved by  <a href="#">VectorCrop.</a>
+        </div>
+    </footer>
+
+    
+    <!-- JS library -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/appear-2.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/tilt.jquery.min.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/typer-new.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/odometer.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
+    <script src="assets/js/smm.js"></script>
+</body>
+</html>       

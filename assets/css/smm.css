@@ -253,7 +253,7 @@ select:visited {
   width: 100%;
   padding: 30px 0px;
   position: absolute;
-  background-color: #fff;
+  background-color: #0a0d18;
   box-shadow: 0px 8px 16px 0px rgba(29, 33, 34, 0.04);
 }
 .smm-main-header .smm-logo {
@@ -347,7 +347,7 @@ select:visited {
   margin: 0px 25px;
 }
 .smm-main-header .smm-main-navigation li a {
-  color: #102fa5;
+  color: #ffffff;
   font-size: 15px;
   display: inline;
   font-weight: 700;
@@ -424,7 +424,7 @@ select:visited {
   position: fixed;
   padding: 27px 0px;
   animation-duration: 0.7s;
-  background-color: #fff;
+  background-color: #0a0d18;
   animation-fill-mode: both;
   animation-name: fadeInDown;
   animation-timing-function: ease;
@@ -1349,7 +1349,7 @@ select:visited {
   right: 0;
   top: -36px;
   z-index: 5;
-  color: #102fa5;
+  color: #ffffff;
   display: none;
   cursor: pointer;
   font-size: 30px;
